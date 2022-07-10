@@ -116,7 +116,7 @@ class TitleState extends MusicBeatState
 		titleJSON = Json.parse(Assets.getText(path)); 
 		#end
 		
-		#if (polymod && !html5)
+		/*#if (polymod && !html5)
 		if (sys.FileSystem.exists('mods/')) {
 			var folders:Array<String> = [];
 			for (file in sys.FileSystem.readDirectory('mods/')) {
@@ -129,7 +129,7 @@ class TitleState extends MusicBeatState
 				polymod.Polymod.init({modRoot: "mods", dirs: folders});
 			}
 		}
-		#end
+		#end*/
 		
 		#if CHECK_FOR_UPDATES
 		if(!closedState) {
