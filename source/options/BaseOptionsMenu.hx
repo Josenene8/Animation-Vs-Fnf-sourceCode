@@ -125,6 +125,11 @@ class BaseOptionsMenu extends MusicBeatSubstate
 
 		changeSelection();
 		reloadCheckboxes();
+		
+		
+		#if android
+                addVirtualPad(FULL, A_B_C);
+                #end
 	}
 
 	public function addOption(option:Option) {
