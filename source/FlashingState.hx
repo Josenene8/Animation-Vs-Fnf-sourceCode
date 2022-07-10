@@ -33,11 +33,15 @@ class FlashingState extends MusicBeatState
 		warnText.setFormat("VCR OSD Mono", 32, FlxColor.WHITE, CENTER);
 		warnText.screenCenter(Y);
 		add(warnText);
+		
+		#if android
+	        addVirtualPad(NONE, A_B);
+                #end
 	}
 
 	override function update(elapsed:Float)
 	{
-			if (FlxG.keys.justPressed.ENTER) {
+			if (controls.ACCEPT) {
 				PlayState.SONG = Song.loadFromJson('stickin-to-it', 'Stickin-To-It');
                 LoadingState.loadAndSwitchState(new PlayState());
 				ClientPrefs.flashing = true;
@@ -45,7 +49,7 @@ class FlashingState extends MusicBeatState
                 FlxTween.tween(warnText, {alpha: 0}, 1, {
                 });
 			}
-            if (FlxG.keys.justPressed.ESCAPE)
+            if (controls.BACK)
             {
                 {
 					PlayState.SONG = Song.loadFromJson('stickin-to-it', 'Stickin-To-It');
