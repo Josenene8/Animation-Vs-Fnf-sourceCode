@@ -1770,7 +1770,7 @@ class PlayState extends MusicBeatState
 		if(ret != FunkinLua.Function_Stop) {
 			
 			#if android
-                        androidc.visible = true;
+                        androidControls.visible = true;
                         #end
 				
 			generateStaticArrows(0);
