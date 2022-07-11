@@ -93,8 +93,8 @@ class NotesSubState extends MusicBeatSubstate
 		changeSelection();
 		
 		#if android
-                addVirtualPad(FULL, A_B);
-                #end
+		addVirtualPad(LEFT_FULL, A_B);
+		#end
 	}
 
 	var changingNote:Bool = false;
