@@ -128,8 +128,8 @@ class BaseOptionsMenu extends MusicBeatSubstate
 		
 		
 		#if android
-                addVirtualPad(FULL, A_B_C);
-                #end
+		addVirtualPad(LEFT_FULL, A_B);
+		#end
 	}
 
 	public function addOption(option:Option) {
