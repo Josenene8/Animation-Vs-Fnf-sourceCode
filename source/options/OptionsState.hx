@@ -56,12 +56,7 @@ class OptionsState extends MusicBeatState
 				removeVirtualPad();
 				#end
 				openSubState(new options.GraphicsSettingsSubState());
-			case 'Controls':
-				#if android
-				removeVirtualPad();
-				#end
-				openSubState(new options.ControlsSubState());	
-				
+			
 			case 'Visuals and UI':
 				#if android
 				removeVirtualPad();
