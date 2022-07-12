@@ -35,7 +35,7 @@ class MusicBeatState extends FlxUIState
 	
 	return PlayerSettings.player1.controls;
 	
-        #if android
+  #if android
 	var virtualPad:FlxVirtualPad;
 	var androidControls:AndroidControls;
 	var trackedinputsUI:Array<FlxActionInput> = [];
@@ -85,6 +85,14 @@ class MusicBeatState extends FlxUIState
 		androidControls.cameras = [camControls];
 		androidControls.visible = false;
 		add(androidControls);
+
+		var _pad:FlxVirtualPad;
+
+	  _pad = new FlxVirtualPad(NONE, A);
+		_pad.alpha = 0.75;
+		_pad.visible = false;
+		_pad.cameras = [camcontrol];
+		add(_pad);
 	}
 
 	public function removeAndroidControls()
