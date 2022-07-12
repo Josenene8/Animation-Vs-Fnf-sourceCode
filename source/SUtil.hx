@@ -60,7 +60,7 @@ class SUtil
 			if (!FileSystem.exists(SUtil.getPath() + 'assets/') && !FileSystem.exists(SUtil.getPath() + 'mods/'))
 			{
 				SUtil.applicationAlert('Error!', "Whoops, seems like you didn't extract the files from the .APK!\nPlease watch the tutorial by pressing OK.");
-				CoolUtil.browserLoad('https://youtu.be/zjvkTmdWvfU');
+				FlxG.openURL('https://youtu.be/zjvkTmdWvfU');
 				System.exit(1);
 			}
 			else
@@ -102,7 +102,7 @@ class SUtil
 	 */
 	public static function uncaughtErrorHandler()
 	{
-		Lib.current.loaderInfo.uncaughtErrorEvents.addEventListener(UncaughtErrorEvent.UNCAUGHT_ERROR, function(e:UncaughtErrorEvent)
+		Lib.current.loaderInfo.uncaughtErrorEvents.addEventListener(UncaughtErrorEvent.UNCAUGHT_ERROR, function(u:UncaughtErrorEvent)
 		{
 			var callStack:Array<StackItem> = CallStack.exceptionStack(true);
 			var errMsg:String = '';
@@ -118,7 +118,7 @@ class SUtil
 				}
 			}
 
-			errMsg += e.error;
+			errMsg += u.error;
 
 			Sys.println(errMsg);
 			SUtil.applicationAlert('Error!', errMsg);
@@ -130,8 +130,8 @@ class SUtil
 
 				File.saveContent(SUtil.getPath() + 'crash/' + Application.current.meta.get('file') + '_' + FlxStringUtil.formatTime(Sys.time(), true) + '.log', errMsg + "\n");
 			}
-			catch (x:Dynamic)
-				SUtil.applicationAlert('Error!', "Clouldn't save the crash dump because: " + x);
+			catch (e:Dynamic)
+				SUtil.applicationAlert('Error!', "Clouldn't save the crash dump because: " + e);
 
 			System.exit(1);
 		});
