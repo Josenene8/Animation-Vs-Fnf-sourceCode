@@ -230,9 +230,10 @@ class SongSelectionState extends MusicBeatState
 			}
 		}
 		#end
-                    #if android
-	        addVirtualPad(LEFT_FULL, A_B);
-                #end
+
+    #if android
+	  addVirtualPad(LEFT_RIGHT, A_B);
+    #end
 		super.create();
 	}
 
