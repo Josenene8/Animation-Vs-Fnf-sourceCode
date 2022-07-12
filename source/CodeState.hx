@@ -112,7 +112,9 @@ class CodeState extends MusicBeatState
 
     add(codeInput);
     FlxG.mouse.visible=true;
-
+    #if android
+	        addVirtualPad(LEFT_FULL, A_B);
+                #end
     super.create();
   }
   var timer:Float = 0;
@@ -130,7 +132,7 @@ class CodeState extends MusicBeatState
         FlxG.mouse.visible=true;
     }
 
-    if(FlxG.keys.justPressed.ESCAPE && codeInput.hasFocus){
+    if(controls.BACK && codeInput.hasFocus){
         codeInput.hasFocus=false;
     }
 
