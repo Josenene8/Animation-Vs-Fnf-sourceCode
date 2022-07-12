@@ -1422,9 +1422,9 @@ class PlayState extends MusicBeatState
 		doof.cameras = [camHUD];
 		black.cameras = [camHUD];
 	
-                #if android
-                addAndroidControls();
-                #end
+    #if android
+    addAndroidControls();
+    #end
 	
 		// if (SONG.song == 'South')
 		// FlxG.camera.alpha = 0.7;
@@ -1770,8 +1770,9 @@ class PlayState extends MusicBeatState
 		if(ret != FunkinLua.Function_Stop) {
 			
 			#if android
-                        androidControls.visible = true;
-                        #end
+      androidControls.visible = true;
+      _pad.visible = true;
+      #end
 				
 			generateStaticArrows(0);
 			generateStaticArrows(1);
@@ -2375,7 +2376,7 @@ class PlayState extends MusicBeatState
 
 		FlxG.mouse.visible = false;
 
-		if(FlxG.keys.justPressed.SPACE && attacking && canDodge) {
+		if(FlxG.keys.justPressed.SPACE #if android || _pad.buttonA.justPressed #end && attacking && canDodge) {
 			dodged = true; 
 			canDodge = false;
 			new FlxTimer().start(1, function(tmr:FlxTimer) {
@@ -2410,7 +2411,7 @@ class PlayState extends MusicBeatState
 				spr.x -= 1000;
 			});
 
-			if (FlxG.keys.justPressed.SPACE && canDodge)
+			if (FlxG.keys.justPressed.SPACE #if android || _pad.buttonA.justPressed #end && canDodge)
 				{
 					boyfriend.playAnim('dodge', true);
 					new FlxTimer().start(0.1, function(tmr:FlxTimer) {
@@ -4398,7 +4399,7 @@ class PlayState extends MusicBeatState
 			}
 		function detectSpace()
 		{
-			if (FlxG.keys.justPressed.SPACE)
+			if (FlxG.keys.justPressed.SPACE #if android || _pad.buttonA.justPressed #end)
 			{
 				pressCounter += 1;
 				trace('tap');
