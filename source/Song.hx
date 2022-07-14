@@ -104,7 +104,7 @@ class Song
 		#end
 
 		if(rawJson == null) {
-			#if sys
+			#if windows
 			rawJson = File.getContent(SUtil.getPath() + Paths.json(formattedFolder + '/' + formattedSong)).trim();
 			#else
 			rawJson = Assets.getText(Paths.json(formattedFolder + '/' + formattedSong)).trim();
