@@ -112,13 +112,12 @@ class CodeState extends MusicBeatState
 
     add(codeInput);
     FlxG.mouse.visible=true;
-    
+
     #if android
     addVirtualPad(NONE, B);
     #end
 
-    super.create()
-    
+    super.create();
   }
   var timer:Float = 0;
 
