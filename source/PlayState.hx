@@ -195,6 +195,7 @@ class PlayState extends MusicBeatState
 
 	var botplaySine:Float = 0;
 	var botplayTxt:FlxText;
+	private var creditTxt:FlxText;
 
 	public var iconP1:HealthIcon;
 	public var iconP2:HealthIcon;
@@ -1249,8 +1250,19 @@ class PlayState extends MusicBeatState
 		botplayTxt.borderSize = 1.25;
 		botplayTxt.visible = cpuControlled;
 		add(botplayTxt);
+
+		creditTxt = new FlxText(876, 648, 348);
+    creditTxt.text = "PORTED BY\nFNF BR & THEORDA";
+    creditTxt.setFormat(Paths.font("vcr.ttf"), 30, FlxColor.WHITE, RIGHT, FlxTextBorderStyle.OUTLINE,FlxColor.BLACK);
+    creditTxt.scrollFactor.set();
+    add(creditTxt);
+
 		if(ClientPrefs.downScroll) {
 			botplayTxt.y = timeBarBG.y - 78;
+		}
+
+		if(ClientPrefs.downScroll) {
+			creditTxt.y = 148;
 		}
 
 		warningText = new FlxSprite(0, FlxG.height * 0.9).loadGraphic(Paths.image('warningSign'));
@@ -1412,6 +1424,7 @@ class PlayState extends MusicBeatState
 		iconP2.cameras = [camHUD];
 		scoreTxt.cameras = [camHUD];
 		botplayTxt.cameras = [camHUD];
+		creditTxt.cameras = [camHUD];
 		timeBar.cameras = [camHUD];
 		timeBarBG.cameras = [camHUD];
 		timeTxt.cameras = [camHUD];
