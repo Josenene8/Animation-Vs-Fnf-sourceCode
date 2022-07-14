@@ -38,6 +38,7 @@ class CodeState extends MusicBeatState
     FlxG.mouse.visible = true;
 
     codeInput = new FlxInputText(500, 350,FlxG.width,"enter code",32,FlxColor.WHITE,FlxColor.TRANSPARENT);
+    codeInput.focusGained = () -> FlxG.stage.window.textInputEnabled = true;
     codeInput.screenCenter();
     codeInput.scrollFactor.set();
     codeInput.background = false;
