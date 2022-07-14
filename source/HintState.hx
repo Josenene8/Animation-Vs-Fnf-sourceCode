@@ -99,6 +99,10 @@ class HintState extends MusicBeatState
         vengeanceText.cameras = [camOther];
         chosenText.cameras = [camChosen];
 
+        #if android
+        addVirtualPad(NONE, A_B);
+        #end
+
         trace('hints lol');
     }
 
