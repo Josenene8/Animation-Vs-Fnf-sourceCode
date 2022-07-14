@@ -115,7 +115,7 @@ class CodeState extends MusicBeatState
     FlxG.mouse.visible=true;
 
     #if android
-    addVirtualPad(NONE, B);
+    addVirtualPad(NONE, A_B);
     #end
 
     super.create();
