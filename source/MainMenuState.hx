@@ -442,7 +442,7 @@ class MainMenuState extends MusicBeatState
 									case 'secret':
 										if (FlxG.save.data.unlockedSecret ==true)
 										{
-											MusicBeatState.switchState(new CodeState());
+											MusicBeatState.switchState(new CodeStateAlt());
 										}
 										else if (FlxG.save.data.unlockedSecret ==false) 
 										{
