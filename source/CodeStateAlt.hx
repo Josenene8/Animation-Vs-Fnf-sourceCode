@@ -23,6 +23,7 @@ import flixel.input.keyboard.FlxKey;
 import flixel.util.FlxTimer;
 import flixel.ui.FlxSpriteButton;
 import editors.ChartingState;
+import flixel.addons.ui.FlxInputText;
 
 using StringTools;
 
@@ -78,7 +79,7 @@ class CodeStateAlt extends MusicBeatState
 
         text = new FlxText(0, 0, FlxG.width, "", 20);
 		text.setFormat(Paths.font("tahoma.ttf"), 100, FlxColor.BLACK, FlxTextBorderStyle.OUTLINE,FlxColor.BLACK);
-    
+    FlxInputText.focusGained = () -> FlxG.stage.window.textInputEnabled = true;
 		text.screenCenter();
         text.x -= 70;
         text.y -= 21;
@@ -236,7 +237,7 @@ class CodeStateAlt extends MusicBeatState
                    });
 				});
             }
-    
+
             if (FlxG.keys.justPressed.ANY)
             {
                 var curKey = FlxG.keys.getIsDown()[FlxG.keys.getIsDown().length - 1].ID.toString();
