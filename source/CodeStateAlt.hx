@@ -26,7 +26,7 @@ import editors.ChartingState;
 
 using StringTools;
 
-class CodeState extends MusicBeatState
+class CodeStateAlt extends MusicBeatState
 {
     // sprites and text
     var windowPopUp:FlxSprite;
