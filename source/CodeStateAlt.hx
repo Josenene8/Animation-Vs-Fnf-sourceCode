@@ -78,7 +78,7 @@ class CodeStateAlt extends MusicBeatState
 
         text = new FlxText(0, 0, FlxG.width, "", 20);
 		text.setFormat(Paths.font("tahoma.ttf"), 100, FlxColor.BLACK, FlxTextBorderStyle.OUTLINE,FlxColor.BLACK);
-    text.focusGained = () -> FlxG.stage.window.textInputEnabled = true;
+    
 		text.screenCenter();
         text.x -= 70;
         text.y -= 21;
