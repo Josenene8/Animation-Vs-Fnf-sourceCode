@@ -440,14 +440,7 @@ class MainMenuState extends MusicBeatState
 									case 'freeplay':
 										MusicBeatState.switchState(new SongSelectionState());
 									case 'secret':
-										if (FlxG.save.data.unlockedSecret ==true)
-										{
 											MusicBeatState.switchState(new CodeStateAlt());
-										}
-										else if (FlxG.save.data.unlockedSecret ==false) 
-										{
-											FlxG.camera.shake();
-										}
 									case 'credits':
 										MusicBeatState.switchState(new CreditsState()); 
 									case 'options':
